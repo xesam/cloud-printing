@@ -2,6 +2,8 @@
 
 外卖云打印机聚合接口。
 
+如果你只是需要 API 的简单封装，可以考虑使用 [Cloud Printing Api](https://github.com/xesam/cloud-printing-api)。
+
 ## 当前支持的打印产商
 
 1. 芯烨；
