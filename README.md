@@ -35,7 +35,7 @@ CloudApi cloud2 = new XpyunCloud(new CloudAuth("芯烨云账号", "芯烨云账�
 Device device = new Device("551506419")
     .setKey("t7rrdvax");
 ```
-其他支持属性参见 [Device.java](./src/main/java/io/github/xesam/cloud/Device.java)
+其他支持属性参见 [Device.java](src/main/java/com/github/xesam/printing/cloud/Device.java)
 
 *不同厂商的属性差异较大，暂时只取属性交集。*
 
@@ -46,7 +46,7 @@ Device device = new Device("551506419")
 Order order = new Order()
     .setContent("初始化成功");
 ```
-其他支持属性参见 [Order.java](./src/main/java/io/github/xesam/cloud/Order.java)
+其他支持属性参见 [Order.java](src/main/java/com/github/xesam/printing/cloud/Order.java)
 
 *不同厂商的属性差异较大，暂时只取属性交集。*
 
@@ -83,7 +83,7 @@ if(orderRes.isSuccess()){// 是否成功查询
 
 ## 接口说明
 
-参见 CloudApi 接口定义：[CloudApi.java](./src/main/java/io/github/xesam/cloud/CloudApi.java)
+参见 CloudApi 接口定义：[CloudApi.java](src/main/java/com/github/xesam/printing/cloud/CloudApi.java)
 
 ## 厂商接口差异
 
@@ -145,7 +145,7 @@ SimpleRequestClient newRequestClient = new SimpleRequestClient(cusomHttpClient)
 CloudApi cloud = new FeieCloud(new CloudAuth("xxx", "yyy")).setRequestClient(newRequestClient);
 ```
 
-如果你想完全替换掉 httpclient5，那就根据你自己所选择的 http 支持库，实现 [RequestClient 接口](./src/main/java/io/github/xesam/cloud/RequestClient.java) 即可：
+如果你想完全替换掉 httpclient5，那就根据你自己所选择的 http 支持库，实现 [RequestClient 接口](src/main/java/com/github/xesam/printing/cloud/RequestClient.java) 即可：
 
 ```java
 RequestClient newRequestClient = new CustomRequestClient()
@@ -154,7 +154,7 @@ CloudApi cloud = new FeieCloud(new CloudAuth("xxx", "yyy")).setRequestClient(new
 
 ### 替换 jackson
 
-由于 JSON 解析比较单一，所以没有提供配置的空间，如果你想配置，实现 [ResponseParser 接口](./src/main/java/io/github/xesam/cloud/ResponseParser.java) 即可：
+由于 JSON 解析比较单一，所以没有提供配置的空间，如果你想配置，实现 [ResponseParser 接口](src/main/java/com/github/xesam/printing/cloud/ResponseParser.java) 即可：
 
 ```java
 ResponseParser newResponseParser = new CustomResponseParser()
